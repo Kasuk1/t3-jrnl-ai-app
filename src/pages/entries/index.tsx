@@ -21,7 +21,7 @@ const Entries = () => {
 
   useEffect(() => {
     if (sessionStatus === "unauthenticated") {
-      replace("/");
+      void replace("/");
     }
   }, [sessionStatus]);
 

@@ -27,7 +27,7 @@ const Entry = () => {
   const { mutate: rateMoodMutation, status: rateMoodStatus } =
     api.ai.rateEntry.useMutation({
       onSuccess() {
-        refetchEntry();
+        void refetchEntry();
       },
     });
 
@@ -62,7 +62,7 @@ const Entry = () => {
 
   useEffect(() => {
     if (sessionStatus === "unauthenticated") {
-      replace("/");
+      void replace("/");
     }
   }, [sessionStatus]);
 

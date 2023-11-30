@@ -12,7 +12,7 @@ const Write = () => {
 
   const { mutate: createEntry } = api.journalling.createEntry.useMutation({
     onSuccess(data) {
-      replace(`/entries/${data.id}`);
+      void replace(`/entries/${data.id}`);
     },
   });
 
@@ -23,7 +23,7 @@ const Write = () => {
 
   useEffect(() => {
     if (sessionStatus === "unauthenticated") {
-      replace("/");
+      void replace("/");
     }
   }, [sessionStatus]);
 
