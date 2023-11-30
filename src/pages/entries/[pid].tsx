@@ -20,7 +20,7 @@ const Entry = () => {
 
   const { mutate: deletionMutation } = api.journalling.deleteEntry.useMutation({
     onSuccess() {
-      replace("/entries");
+      void replace("/entries");
     },
   });
 
